@@ -35,7 +35,7 @@ function App() {
 
           <Route path="/wb" element={<Board/>} />
           <Route path="/code" element={<Auth />} />
-          <Route path="/interview/" element={<InterviewRoom/>} />
+          {/* <Route path="/interview/" element={<InterviewRoom/>} /> */}
           <Route path="/editor/" element={<Editor/>} />
           
         </>
