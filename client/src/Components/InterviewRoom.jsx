@@ -18,6 +18,7 @@ export default function InterviewRoom() {
   const userRole = searchParams.get('role');
   const socket = useSocket('http://localhost:5000');
 
+  
   const [participants, setParticipants] = useState([]);
   const [otherUserId, setOtherUserId] = useState(null);
   const [allParticipants, setAllParticipants] = useState(new Map()); // Track all participants
