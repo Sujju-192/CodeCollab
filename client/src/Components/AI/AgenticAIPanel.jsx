@@ -153,7 +153,7 @@ const AgenticAIPanel = ({
           {String(children).replace(/\n$/, '')}
         </SyntaxHighlighter>
       ) : (
-        <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono" {...props}>
+        <code className="bg-blue-300 px-2 py-1 rounded text-sm font-mono" {...props}>
           {children}
         </code>
       );
@@ -185,7 +185,7 @@ const AgenticAIPanel = ({
               </p>
               <button
                 onClick={onClose}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                className="bg-blue-600 text-black px-4 py-2 rounded-lg hover:bg-blue-700"
               >
                 Close
               </button>
@@ -384,7 +384,7 @@ const AgenticAIPanel = ({
               )}
 
               <form onSubmit={handleSubmit} className="flex space-x-3">
-                <div className="flex-1">
+                <div className="flex-1 text-black">
                   <textarea
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
@@ -419,7 +419,7 @@ const AgenticAIPanel = ({
                     className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 ${
                       loading || (!input.trim() && selectedAction === AI_ACTIONS.GENERAL)
                         ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                        : 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md'
+                        : 'bg-blue-600 text-black hover:bg-blue-700 shadow-sm hover:shadow-md'
                     }`}
                   >
                     {loading ? (
@@ -565,7 +565,7 @@ const ConversationMessage = ({ conversation, onShare, onRemove, onCopy, markdown
           <div className="text-red-700 text-sm">{conversation.error}</div>
         </div>
       ) : (
-        <div className="prose prose-sm max-w-none">
+        <div className="prose prose-sm prose-invert max-w-none bg-gray-900 p-4 rounded-md">
           <ReactMarkdown components={markdownComponents}>
             {conversation.response}
           </ReactMarkdown>
@@ -585,3 +585,4 @@ const ConversationMessage = ({ conversation, onShare, onRemove, onCopy, markdown
 };
 
 export default AgenticAIPanel;
+ReactMarkdown

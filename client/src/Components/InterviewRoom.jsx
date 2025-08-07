@@ -257,7 +257,7 @@ console.log("isAIEnabled..........",isAIEnabled);
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowAIPanel(true)}
           className="absolute top-4 right-4 z-30 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
-          title="Open AI Coding Assistant"
+          title="Smart Coding Assistant"
         >
           <Bot className="w-6 h-6" />
           <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse" />

@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from "react";
 import { Tldraw } from "@tldraw/tldraw";
 import "@tldraw/tldraw/tldraw.css";
 
-export function CollaborativeEditor({ onShareClick }) {
+export function CollaborativeEditor({ onShareClick, onCodeChange }) {
   const [editorRef, setEditorRef] = useState(null);
   const [language, setLanguage] = useState("javascript");
   const [output, setOutput] = useState("");
@@ -37,6 +37,40 @@ export function CollaborativeEditor({ onShareClick }) {
 
     return () => binding.destroy();
   }, [editorRef, room]);
+
+
+
+  //Detecting Language and Prompt (AI)
+  const detectLanguage = (code) => {
+    if (!code) return 'javascript';
+    if (code.includes('def ') || code.includes('import ') || code.includes('print(')) return 'python';
+    if (code.includes('public class') || code.includes('System.out')) return 'java';
+    if (code.includes('#include') || code.includes('std::')) return 'cpp';
+    if (code.includes('function ') || code.includes('const ') || code.includes('let ')) return 'javascript';
+    if (code.includes('<html>') || code.includes('<div>')) return 'html';
+    if (code.includes('body {') || code.includes('.class')) return 'css';
+    return 'javascript';
+  };
+
+  useEffect(() => {
+    if (!editorRef || !onCodeChange) return;
+
+    // Send initial content once editor is ready
+    const initialContent = editorRef.getValue();
+    const initialLanguage = detectLanguage(initialContent) || 'javascript';
+    onCodeChange(initialContent, initialLanguage);
+
+    // Subscribe to editor changes
+    const disposable = editorRef.onDidChangeModelContent(() => {
+      const content = editorRef.getValue();
+      const detectedLang = detectLanguage(content) || 'javascript';
+      onCodeChange(content, detectedLang);
+    });
+
+    // Cleanup subscription on unmount or editorRef change
+    return () => disposable.dispose();
+  }, [editorRef, onCodeChange]);
+
 
   // Handle incoming chat messages
   useEventListener(({ event }) => {
