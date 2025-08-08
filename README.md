@@ -1,4 +1,4 @@
-# 🚀 CodeCollab - **Real-time Collaborative Code Editor with AI Assistance**
+# 🚀 CodeCollab-**Real-time Collaborative Code Editor with AI Assistance**
 
 CodeCollab is a powerful web-based tool that enables developers, interviewers, and teams to collaborate on code in real-time. Featuring live code sharing, AI-powered assistance, chat, whiteboarding, and instant execution, it's your complete coding collaboration solution — no sign-up required.
 
@@ -6,10 +6,8 @@ CodeCollab is a powerful web-based tool that enables developers, interviewers, a
 
 ## 📸 CodeCollab Preview
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000318.png" width="45%" />
-  <img src="https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000339.png" width="45%" />
-</p>
+<img src="https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000318.png" width="45%" style="margin-right: 10px;" />
+<img src="https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000339.png" width="45%" />
 
 ---
 
@@ -178,10 +176,10 @@ If you have any questions, ideas, or feedback, feel free to open an issue or rea
 
 ---
 
-Let me know if you want:
-- GitHub social preview image design tips (for sharing your repo)
-- Live demo site link section
-- Shields.io badges (stars, forks, license, tech stack)
+### 📌 Notes:
+- These images are now **left-aligned** and not centered.
+- Markdown doesn't support `style="margin"` or `float:left;` reliably across GitHub, so this is as close as possible.
+- If you want them stacked vertically, just reduce the `width` or remove one image per line.
 
-Happy coding! 💻
+Let me know if you want a vertically stacked layout or a layout with captions under each screenshot!
 ```
