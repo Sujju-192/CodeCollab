@@ -252,7 +252,7 @@ console.log("isAIEnabled..........",isAIEnabled);
       {/* Video Section */}
       <div className="w-[70%] h-full relative">
         {/* AI Assistant Floating Button */}
-        <motion.button
+        {/* <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowAIPanel(true)}
@@ -271,7 +271,7 @@ console.log("isAIEnabled..........",isAIEnabled);
             </div>
             <div className="w-2 h-2 bg-gray-900 rotate-45 absolute top-full right-3 -mt-1"></div>
           </div>
-        </motion.button>
+        {/* </motion.button> */} 
 
         <VideoChat
           localStream={localStream}
