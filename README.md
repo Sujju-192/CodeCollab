@@ -6,6 +6,8 @@ CodeCollab is a powerful web-based tool that enables developers, interviewers, a
 
 ## 📸 CodeCollab Preview
 
+## 📸 CodeCollab Preview
+
 <div align="center">
 
 ![Dashboard](https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000318.png)
