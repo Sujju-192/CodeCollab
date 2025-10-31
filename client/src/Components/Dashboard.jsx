@@ -160,10 +160,23 @@ const Dashboard = () => {
                     </motion.button>
 
                     <Link to={"/editor"}>
-                    <motion.button onClick={() => setActiveTab("playback")} className={`w-full flex items-center gap-3 p-2 rounded-lg text-sm transition-colors ${activeTab === "playback" ? "bg-gray-700 text-purple-400" : "text-gray-400 hover:bg-gray-700 hover:text-gray-200"}`} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                        <div className="w-6 h-6 flex items-center justify-center"><FaClock className={activeTab === "playback" ? "text-purple-400" : "text-gray-400"} /></div>
-                        {sidebarOpen && <span>Code Collab</span>}
-                    </motion.button>
+                        <motion.button onClick={() => setActiveTab("playback")} className={`w-full flex items-center gap-3 p-2 rounded-lg text-sm transition-colors ${activeTab === "playback" ? "bg-gray-700 text-purple-400" : "text-gray-400 hover:bg-gray-700 hover:text-gray-200"}`} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                            <div className="w-6 h-6 flex items-center justify-center"><FaClock className={activeTab === "playback" ? "text-purple-400" : "text-gray-400"} /></div>
+                            {sidebarOpen && <span>Code Collab</span>}
+                        </motion.button>
+                    </Link>
+
+                    {/* Add Learn Page Link Here */}
+                    <Link to={"/learn"}>
+                        <motion.button className="w-full flex items-center gap-3 p-2 rounded-lg text-sm text-gray-400 hover:bg-gray-700 hover:text-green-400 transition-colors" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                            <div className="w-6 h-6 flex items-center justify-center">
+                                {/* You can use a book icon or any appropriate icon */}
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            {sidebarOpen && <span>Learn</span>}
+                        </motion.button>
                     </Link>
                 </nav>
 

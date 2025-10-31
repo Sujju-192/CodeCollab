@@ -11,6 +11,7 @@ import Board from "./components/Board";
 import InterviewRoom from "./components/InterviewRoom";
 import Editor from "./components/Editor";
 import Dashboard from "./components/Dashboard";
+import Learn from "./Components/Learn";
 
 
 function App() {
@@ -40,7 +41,6 @@ function App() {
           <Route path="/code" element={<Auth />} />
           {/* <Route path="/interview/" element={<InterviewRoom/>} /> */}
           <Route path="/editor/" element={<Editor/>} />
-          
           <Route path="/interview" element={<InterviewRoom />} />
 
 
@@ -55,6 +55,7 @@ function App() {
           <Route path="/room/:roomId" element={<InterviewRoom />} />
           <Route path="/editor/" element={<Editor />} />
           <Route path="/interview-dashboard" element={<InterviewDashboard />} />
+          <Route path="/learn" element={<Learn/>}/>
           
           <Route path="*" element={<Navigate to="/dashboard" />} />
         </>
