@@ -1,13 +1,26 @@
-# 🚀 CodeCollab-**Real-time Collaborative Code Editor with AI Assistance**
+# 🚀 CodeCollab - Real-time Collaborative Code Editor with AI Assistance
 
-CodeCollab is a powerful web-based tool that enables developers, interviewers, and teams to collaborate on code in real-time. Featuring live code sharing, AI-powered assistance, chat, whiteboarding, and instant execution, it's your complete coding collaboration solution — no sign-up required.
+CodeCollab is a powerful web-based tool that enables developers, interviewers, and teams to collaborate on code in real-time. Featuring live code sharing, AI-powered assistance, chat, whiteboarding, instant execution, and comprehensive documentation, it's your complete coding collaboration solution — no sign-up required.
 
 ---
 
 ## 📸 CodeCollab Preview
 
-<img src="https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000318.png" width="45%" style="margin-right: 10px;" />
-<img src="https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000339.png" width="45%" />
+<div align="center">
+
+![Dashboard](https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000318.png)
+*Dashboard Interface*
+
+![Code Editor](https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000339.png)
+*Real-time Code Editor*
+
+![Learn Documentation](https://via.placeholder.com/800x400/1f2937/ffffff?text=Learn+Documentation+Page)
+*Comprehensive Documentation*
+
+![AI Assistance](https://via.placeholder.com/800x400/1f2937/ffffff?text=AI+Powered+Assistance)
+*AI Coding Copilot*
+
+</div>
 
 ---
 
@@ -26,6 +39,17 @@ CodeCollab is a powerful web-based tool that enables developers, interviewers, a
   - 🚀 Performance Optimization
   - ✍️ Auto-Completion & Code Generation
   - 📘 Step-by-Step Explanations
+
+### 📚 Learn Documentation Hub
+- **Comprehensive programming guides** for 5 languages:
+  - **JavaScript** - Modern ES6+, DOM, Async Programming
+  - **Python** - Data Science, Web Development, OOP
+  - **Java** - Enterprise Development, Collections, Multithreading
+  - **C++** - System Programming, STL, Memory Management
+  - **C** - Fundamentals, Pointers, File I/O
+- **Interactive code examples** with copy-paste functionality
+- **Dark theme** consistent with the entire platform
+- **Topic-based navigation** with search functionality
 
 ### 🧠 Whiteboard Integration
 - Collaborative drawing canvas.
@@ -49,6 +73,7 @@ CodeCollab is a powerful web-based tool that enables developers, interviewers, a
 - Framer Motion
 - Liveblocks (presence & events)
 - React Hot Toast
+- Tailwind CSS
 
 **Backend**
 - Node.js + Express
@@ -67,6 +92,11 @@ CodeCollab is a powerful web-based tool that enables developers, interviewers, a
 - JavaScript Sandbox (client-side)
 - Piston API for Python, Java, and C++
 
+**Documentation System**
+- React-based interactive learning platform
+- Multi-language support with syntax highlighting
+- Responsive sidebar navigation
+
 ---
 
 ## ⚙️ Installation
@@ -75,11 +105,7 @@ CodeCollab is a powerful web-based tool that enables developers, interviewers, a
 # Clone the repository
 git clone https://github.com/AdityaGowda23/CodeCollab-AI.git
 cd CodeCollab-AI
-````
 
-### Install Dependencies
-
-```bash
 # Server
 cd server
 npm install
@@ -87,22 +113,16 @@ npm install
 # Client
 cd ../client
 npm install
-```
 
-### Configure Environment Variables
 
-```env
 # server/.env
 GITHUB_TOKEN=ghp_your_github_token
 AI_ENABLED=true
 
 # client/.env
 VITE_API_BASE_URL=http://localhost:3000
-```
 
-### Run the Application
 
-```bash
 # Start backend
 cd server
 npm run dev
@@ -110,76 +130,3 @@ npm run dev
 # Start frontend (in a separate terminal)
 cd ../client
 npm run dev
-```
-
-Open your browser at: [http://localhost:5173](http://localhost:5173) 🎉
-
----
-
-## 💡 Usage Guide
-
-1. **Create or Join Room**
-
-   * Click on **“Create New Room”** or enter a room ID to join.
-
-2. **Collaborate in Real-Time**
-
-   * Edit code, chat, and whiteboard with your team.
-
-3. **Invoke AI Copilot**
-
-   * Click the floating 🤖 **AI** button.
-   * Choose from: Analyze | Debug | Optimize | Complete | Explain
-
-4. **Share Room**
-
-   * Click **“Share”** to copy the room URL and invite others.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions!
-
-```bash
-# Steps to contribute:
-1. Fork the repository
-2. Create your feature branch:
-   git checkout -b feature/awesome-feature
-3. Commit your changes:
-   git commit -m 'Add awesome feature'
-4. Push to the branch:
-   git push origin feature/awesome-feature
-5. Open a Pull Request
-```
-
-Please follow our **Code of Conduct** and ensure all tests pass.
-
----
-
-## 🧾 License
-
-This project is licensed under the **MIT License**.
-See [LICENSE](LICENSE) for more information.
-
----
-
-## 📬 Contact
-
-If you have any questions, ideas, or feedback, feel free to open an issue or reach out to the maintainer.
-
----
-
-> Built with ❤️ for developers, by developers.
-
-```
-
----
-
-### 📌 Notes:
-- These images are now **left-aligned** and not centered.
-- Markdown doesn't support `style="margin"` or `float:left;` reliably across GitHub, so this is as close as possible.
-- If you want them stacked vertically, just reduce the `width` or remove one image per line.
-
-Let me know if you want a vertically stacked layout or a layout with captions under each screenshot!
-```
