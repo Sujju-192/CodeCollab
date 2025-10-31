@@ -14,7 +14,7 @@ CodeCollab is a powerful web-based tool that enables developers, interviewers, a
 ![Code Editor](https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000339.png)
 *Real-time Code Editor*
 
-![Learn Documentation]([https://via.placeholder.com/800x400/1f2937/ffffff?text=Learn+Documentation+Page](https://github.com/Sujju-192/ProjectPics/blob/main/Screenshot%20(157).png))
+![Learn Documentation](https://github.com/Sujju-192/ProjectPics/blob/main/Screenshot%20(157).png)
 *Comprehensive Documentation*
 
 ![AI Assistance](https://via.placeholder.com/800x400/1f2937/ffffff?text=AI+Powered+Assistance)
