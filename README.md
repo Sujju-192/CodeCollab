@@ -1,221 +1,439 @@
-```markdown
+````md
 # 🚀 CodeCollab
 ### Real-Time Collaborative Code Editor with AI-Powered Assistance
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-Build-646CFF?logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/Monaco-Editor-007ACC?logo=visualstudiocode&logoColor=white" alt="Monaco" />
-  <img src="https://img.shields.io/badge/WebRTC-Peer--to--Peer-333333?logo=webrtc&logoColor=white" alt="WebRTC" />
-  <img src="https://img.shields.io/badge/Yjs-CRDT-FF6C2C?logo=yjs&logoColor=white" alt="Yjs" />
-  <img src="https://img.shields.io/badge/Gemini-AI-8E75B2?logo=google&logoColor=white" alt="Gemini" />
-  <img src="https://img.shields.io/badge/GitHub_Models-API-181717?logo=github&logoColor=white" alt="GitHub Models" />
-  <img src="https://img.shields.io/badge/Tailwind-CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Liveblocks-Collab-000000?logo=liveblocks&logoColor=white" alt="Liveblocks" />
+
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Build-646CFF?logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white)
+![Monaco](https://img.shields.io/badge/Monaco-Editor-007ACC?logo=visualstudiocode&logoColor=white)
+![WebRTC](https://img.shields.io/badge/WebRTC-Peer--to--Peer-333333?logo=webrtc&logoColor=white)
+![Yjs](https://img.shields.io/badge/Yjs-CRDT-FF6C2C)
+![Gemini](https://img.shields.io/badge/Gemini-AI-8E75B2)
+![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06B6D4?logo=tailwindcss&logoColor=white)
+
 </p>
 
 ---
 
 ## 📌 Overview
 
-CodeCollab is an all-in-one web-based collaboration platform for developers, interviewers, and coding teams. It combines **real-time code editing**, **AI-powered coding assistance**, **interactive documentation**, **whiteboarding**, and **instant code execution** – no sign-up required. Just create a room, share the link, and start building together.
+CodeCollab is an AI-powered real-time collaborative coding platform designed for developers, coding teams, interview sessions, and learning environments.
 
-### 🌟 Why CodeCollab?
+Instead of switching between multiple tools for coding, debugging, documentation, execution, and collaboration, CodeCollab combines everything into one seamless workspace.
 
-- 🔄 **Live Multiplayer Editing** – See everyone’s changes and cursors in real-time
-- 🤖 **AI Copilot Inside Your Editor** – Debug, optimise, and generate code with context-aware AI
-- ⚡ **Instant Code Execution** – Run JavaScript, Python, Java, and C++ without leaving the browser
-- 📚 **Built-in Learning Hub** – Interactive programming guides for 5 major languages
-- 🎨 **Whiteboard + AI** – Sketch ideas and let AI explain them
-- 🔗 **One-Click Rooms** – Create a shareable link, no accounts needed
-- 🛡️ **Privacy First** – Peer-to-peer WebRTC sync; no server stores your code
+Users can create a room, share a link, and instantly collaborate with others while receiving AI-powered assistance directly inside the editor.
 
 ---
 
-## 📸 CodeCollab Preview
+## ✨ Features
 
-<div align="center">
+### 🔄 Real-Time Collaboration
 
-![Dashboard](https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000318.png)
-*Dashboard Interface*
-
-![Code Editor](https://raw.githubusercontent.com/AdityaGowda23/CodeCollab-AI/main/client/public/Screenshot%202025-08-09%20000339.png)
-*Feature-Rich Code Editor*
-
-![Real-time Editor](https://github.com/Sujju-192/ProjectPics/blob/main/image.png?raw=true)
-*Real-time Collaboration & Cursors*
-
-![Learn Documentation](https://github.com/Sujju-192/ProjectPics/blob/main/Screenshot%20(157).png)
-*Interactive Documentation Hub – JavaScript, Python, Java, C++, C*
-
-</div>
+- Live multiplayer editing
+- Multi-user cursor presence
+- Instant synchronization
+- Peer-to-peer collaborative workflow
+- Shared rooms with unique links
 
 ---
 
-## ✨ Core Features
+### 🤖 AI Coding Assistant
 
-| Category | Feature | Details |
-|----------|---------|---------|
-| 🧑‍💻 **Real-Time Collaboration** | Multi-cursor editing, peer-to-peer sync, presence awareness | Powered by Yjs + WebRTC, with Liveblocks for room state |
-| 🤖 **AI Copilot** | Code analysis, debugging, optimisation, auto-completion, explanations | Supports GPT-4.1, DeepSeek-V3-0324, Llama 4 Scout (GitHub Models), and Gemini |
-| 📚 **Learn Hub** | Interactive programming guides for 5 languages | JavaScript, Python, Java, C++, C with copy-paste code examples and dark theme |
-| 🧠 **Whiteboard** | Collaborative drawing canvas with AI diagram interpretation | Draw flows, architectures, and get AI-generated explanations |
-| ⚙️ **Code Execution** | Run code instantly in-browser or via Piston API | JavaScript (client-side), Python/Java/C++ (Piston API) |
-| 🔗 **Shareable Rooms** | One-click room creation with public URL | No sign-up; just share the link to invite collaborators |
-| 🎨 **Modern UI** | Smooth animations, dark theme, toast notifications | Built with Framer Motion, React Hot Toast, Tailwind CSS |
+Generate and improve code using AI:
+
+- Code generation
+- Debugging
+- Optimization
+- Explanation of code
+- Context-aware suggestions
+- Auto-completion support
+
+Supports:
+
+- GPT-4.1
+- DeepSeek-V3
+- Llama 4 Scout
+- Gemini AI
 
 ---
 
-## 🏗️ System Architecture
+### ⚡ Instant Code Execution
+
+Execute code without leaving the browser.
+
+Supported languages:
+
+- JavaScript
+- Python
+- Java
+- C++
+- C
+
+Execution methods:
+
+- Browser sandbox execution
+- Piston API integration
+
+---
+
+### 📚 Interactive Learning Hub
+
+Built-in documentation and guides:
+
+- JavaScript
+- Python
+- Java
+- C++
+- C
+
+Features:
+
+- Copy-ready examples
+- Syntax highlighting
+- Dark mode support
+- Organized navigation
+
+---
+
+### 🎨 AI Whiteboard
+
+Collaborative whiteboard for:
+
+- Architecture diagrams
+- Flowcharts
+- Sketches
+- Problem explanations
+
+Includes AI-based interpretation and explanations.
+
+---
+
+### 🔗 One Click Sharing
+
+- No signup required
+- Room-based collaboration
+- Share links instantly
+- Quick join experience
+
+---
+
+## 📷 Screenshots
+
+### Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+---
+
+### Code Editor
+
+![Editor](./screenshots/editor.png)
+
+---
+
+### Real-Time Collaboration
+
+![Collaboration](./screenshots/collaboration.png)
+
+---
+
+### Documentation Hub
+
+![Documentation](./screenshots/documentation.png)
+
+---
+
+### Whiteboard
+
+![Whiteboard](./screenshots/whiteboard.png)
+
+---
+
+## 🏗 System Architecture
 
 ```text
 Frontend (React + Vite)
    │
-   ├── Monaco Editor (Code)
-   ├── Yjs + WebRTC (Peer-to-Peer sync)
-   ├── Liveblocks (Presence & Room events)
-   └── AI Panel / Whiteboard / Execution
+   ├── Monaco Editor
+   ├── Yjs Collaboration Layer
+   ├── WebRTC
+   ├── AI Panel
+   └── Whiteboard
          │
          ▼
 Backend (Node.js + Express)
-   ├── WebSocket Signaling for WebRTC
-   └── GitHub Models API Proxy (AI)
+   │
+   ├── WebSocket Signaling
+   ├── AI API Proxy
+   └── Collaboration Services
          │
          ▼
-External APIs
-   ├── GitHub Models (GPT-4.1, DeepSeek, Llama)
-   ├── Google Gemini (Structured insights)
-   └── Piston API (Code execution)
+External Services
+   │
+   ├── GitHub Models API
+   ├── Google Gemini
+   └── Piston API
 ```
-
-- **Peer-to-Peer Collaboration**: Yjs CRDT ensures all changes are instantly synchronised without a central server storing your code.  
-- **AI Services**: The backend securely proxies requests to GitHub Models and Gemini, keeping your API keys safe.  
-- **Execution**: JavaScript runs directly in the browser’s sandbox; Python/Java/C++ are executed via Piston API.
 
 ---
 
-## ⚙️ Installation & Local Development
+## ⚙️ Tech Stack
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/AdityaGowda23/CodeCollab-AI.git
-cd CodeCollab-AI
+### Frontend
+
+- React
+- Vite
+- Tailwind CSS
+- Monaco Editor
+- Framer Motion
+- React Hot Toast
+
+### Collaboration Layer
+
+- Yjs
+- WebRTC
+- Liveblocks
+
+### Backend
+
+- Node.js
+- Express
+- WebSocket
+- dotenv
+
+### AI Services
+
+- GitHub Models API
+- Gemini AI
+
+### Code Execution
+
+- Piston API
+- Browser Sandbox Execution
+
+---
+
+## 📂 Project Structure
+
+```text
+CodeCollab/
+│
+├── client/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   └── public/
+│
+├── server/
+│   ├── routes/
+│   ├── services/
+│   ├── websocket/
+│   └── server.js
+│
+└── README.md
 ```
 
-### 2. Backend setup
+---
+
+# 🚀 Installation Guide
+
+## Step 1: Clone Repository
+
+```bash
+git clone https://github.com/yourusername/CodeCollab.git
+
+cd CodeCollab
+```
+
+---
+
+## Step 2: Backend Setup
+
+Move into backend folder:
+
 ```bash
 cd server
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-Create a `.env` file inside `server/`:
-```env
-GITHUB_TOKEN=ghp_your_github_token
-AI_ENABLED=true
+Create:
+
+```bash
+server/.env
 ```
 
-Start the server:
+Add:
+
+```env
+GITHUB_TOKEN=your_github_token
+
+AI_ENABLED=true
+
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+Start backend:
+
 ```bash
 npm run dev
 ```
 
-### 3. Frontend setup
+Backend runs on:
+
 ```bash
-cd ../client
+http://localhost:3000
+```
+
+---
+
+## Step 3: Frontend Setup
+
+Open new terminal:
+
+```bash
+cd client
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-Create a `.env` file inside `client/`:
+Create:
+
+```bash
+client/.env
+```
+
+Add:
+
 ```env
 VITE_API_BASE_URL=http://localhost:3000
 ```
 
-Start the frontend:
+Start frontend:
+
 ```bash
 npm run dev
 ```
 
-Your full-stack CodeCollab is now running on `http://localhost:5173`!
+Frontend runs on:
+
+```bash
+http://localhost:5173
+```
 
 ---
 
-## 🧰 Tech Stack
+## ▶️ Running Application
 
-### Frontend
-- React + Vite
-- Monaco Editor
-- Tailwind CSS
-- Framer Motion
-- React Hot Toast
-- Liveblocks (presence & events)
+Start backend:
 
-### Collaboration Layer
-- Yjs (CRDT)
-- WebRTC (peer-to-peer data channel)
-- Liveblocks (room management)
+```bash
+cd server
 
-### Backend
-- Node.js + Express
-- WebSocket (ws)
-- GitHub Models API (proxy)
-- dotenv
+npm run dev
+```
 
-### AI Models
-- GitHub Models: GPT-4.1, DeepSeek-V3-0324, Llama 4 Scout
-- Google Gemini
+Start frontend:
 
-### Execution Engine
-- In-browser JavaScript sandbox
-- Piston API (Python, Java, C++)
+```bash
+cd client
 
-### Documentation System
-- React-based interactive learning platform
-- Multi-language syntax highlighting
-- Responsive sidebar navigation
+npm run dev
+```
+
+Open browser:
+
+```bash
+http://localhost:5173
+```
 
 ---
 
-## 📚 Learn Documentation Hub
+## 📚 Learn Hub
 
-The built-in **Learn** section offers comprehensive, interactive guides for:
+The built-in learning section provides documentation and tutorials for:
 
-- **JavaScript** – ES6+, DOM manipulation, async/await
-- **Python** – Data science, web frameworks, OOP concepts
-- **Java** – Enterprise patterns, collections, multithreading
-- **C++** – STL, memory management, system programming
-- **C** – Pointers, file I/O, fundamentals
+### JavaScript
 
-All examples are copy-paste ready and follow the platform’s dark theme.
+- ES6+
+- Async/Await
+- DOM Manipulation
+
+### Python
+
+- OOP
+- Functions
+- Libraries
+
+### Java
+
+- Collections
+- OOP
+- Multithreading
+
+### C++
+
+- STL
+- Memory Management
+- Competitive Programming
+
+### C
+
+- Fundamentals
+- Pointers
+- File Handling
 
 ---
 
 ## 🔮 Future Enhancements
 
-- 🔐 Optional user accounts & room history
-- 🎥 Integrated video/voice chat
-- 📁 File tree & multi-file support
-- 🧪 AI unit test generation
-- 🚀 One-click deployment of frontend projects
-- 🌍 Community templates & snippet library
+- User authentication
+- Room history
+- Voice and video communication
+- Multi-file support
+- AI-generated unit testing
+- Community templates
+- One-click deployment
+- Project history
 
 ---
 
 ## 👨‍💻 Author
 
-Project by **Aditya Gowda**  
-(Add your GitHub/LinkedIn links here)
+Aditya Gowda
+
+GitHub:
+
+https://github.com/yourusername
+
+LinkedIn:
+
+https://linkedin.com/in/yourprofile
 
 ---
 
-## ⭐ Support the Project
+## ⭐ Support
 
-If you find CodeCollab useful:
+If you liked this project:
 
-- ⭐ **Star** the repository
-- 🍴 **Fork** it and build your own features
-- 🐛 **Report bugs** or suggest enhancements
-- 🛠️ **Contribute** – pull requests welcome!
+⭐ Star the repository
 
-Happy collaborating! 🚀
-```
+🍴 Fork the project
+
+🛠 Contribute improvements
+
+🐛 Report bugs
+
+Happy Coding 🚀
+````
