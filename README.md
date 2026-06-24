@@ -1,11 +1,10 @@
-````md
 # 🚀 CodeCollab
 ### Real-Time Collaborative Code Editor with AI-Powered Assistance
 
 <p align="center">
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-Build-646CFF?logo=vite&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white)
 ![Monaco](https://img.shields.io/badge/Monaco-Editor-007ACC?logo=visualstudiocode&logoColor=white)
 ![WebRTC](https://img.shields.io/badge/WebRTC-Peer--to--Peer-333333?logo=webrtc&logoColor=white)
@@ -17,25 +16,48 @@
 
 ---
 
-## 📌 Overview
+<p align="center">
 
-CodeCollab is an AI-powered real-time collaborative coding platform designed for developers, coding teams, interview sessions, and learning environments.
+A modern AI-powered collaborative coding platform that combines **real-time code editing**, **AI coding assistance**, **live collaboration**, **instant execution**, and **interactive learning** into a single workspace.
 
-Instead of switching between multiple tools for coding, debugging, documentation, execution, and collaboration, CodeCollab combines everything into one seamless workspace.
-
-Users can create a room, share a link, and instantly collaborate with others while receiving AI-powered assistance directly inside the editor.
+</p>
 
 ---
 
-## ✨ Features
+## 📌 Overview
+
+CodeCollab is designed for developers, students, interviewers, and coding teams who want a seamless collaborative experience without switching between multiple tools.
+
+Instead of opening separate applications for:
+
+- Writing code
+- Sharing screens
+- Debugging
+- Learning concepts
+- Running code
+- Brainstorming ideas
+
+CodeCollab merges everything into one environment.
+
+Create a room → Share the link → Start collaborating instantly.
+
+---
+
+## ✨ Core Features
 
 ### 🔄 Real-Time Collaboration
 
-- Live multiplayer editing
-- Multi-user cursor presence
+- Live multiplayer code editing
+- Multi-cursor presence
+- Shared rooms
 - Instant synchronization
 - Peer-to-peer collaborative workflow
-- Shared rooms with unique links
+
+Powered by:
+
+- Yjs
+- WebRTC
+- Liveblocks
 
 ---
 
@@ -44,18 +66,18 @@ Users can create a room, share a link, and instantly collaborate with others whi
 Generate and improve code using AI:
 
 - Code generation
+- Bug fixing
 - Debugging
 - Optimization
-- Explanation of code
-- Context-aware suggestions
-- Auto-completion support
+- Explanations
+- Smart suggestions
+- Context-aware responses
 
-Supports:
+Supported Models:
 
 - GPT-4.1
-- DeepSeek-V3
 - Llama 4 Scout
-- Gemini AI
+- Google Gemini
 
 ---
 
@@ -73,14 +95,14 @@ Supported languages:
 
 Execution methods:
 
-- Browser sandbox execution
-- Piston API integration
+- Browser JavaScript sandbox
+- Piston API execution
 
 ---
 
 ### 📚 Interactive Learning Hub
 
-Built-in documentation and guides:
+Built-in documentation and learning resources:
 
 - JavaScript
 - Python
@@ -90,132 +112,137 @@ Built-in documentation and guides:
 
 Features:
 
+- Dark theme
 - Copy-ready examples
 - Syntax highlighting
-- Dark mode support
 - Organized navigation
 
 ---
 
 ### 🎨 AI Whiteboard
 
-Collaborative whiteboard for:
+Collaborative workspace for:
 
 - Architecture diagrams
 - Flowcharts
 - Sketches
-- Problem explanations
+- Brainstorming
 
-Includes AI-based interpretation and explanations.
+Includes:
+
+- Real-time collaboration
+- AI interpretation
+- Visual explanations
 
 ---
 
 ### 🔗 One Click Sharing
 
 - No signup required
-- Room-based collaboration
-- Share links instantly
-- Quick join experience
+- Instant room generation
+- Shareable URLs
+- Fast joining experience
 
 ---
 
-## 📷 Screenshots
+# 📸 Application Preview
 
-### Dashboard
+## Dashboard
 
 ![Dashboard](./screenshots/dashboard.png)
 
 ---
 
-### Code Editor
+## Collaborative Editor
 
 ![Editor](./screenshots/editor.png)
 
 ---
 
-### Real-Time Collaboration
+## Live Collaboration
 
 ![Collaboration](./screenshots/collaboration.png)
 
 ---
 
-### Documentation Hub
+## Documentation Hub
 
 ![Documentation](./screenshots/documentation.png)
 
 ---
 
-### Whiteboard
+## Whiteboard
 
 ![Whiteboard](./screenshots/whiteboard.png)
 
 ---
 
-## 🏗 System Architecture
+# 🏗 System Architecture
 
 ```text
 Frontend (React + Vite)
-   │
-   ├── Monaco Editor
-   ├── Yjs Collaboration Layer
-   ├── WebRTC
-   ├── AI Panel
-   └── Whiteboard
-         │
-         ▼
+        │
+        │
+        ├── Monaco Editor
+        ├── Yjs Collaboration Layer
+        ├── WebRTC
+        ├── AI Panel
+        ├── Whiteboard
+        └── Learning Hub
+                │
+                ▼
 Backend (Node.js + Express)
-   │
-   ├── WebSocket Signaling
-   ├── AI API Proxy
-   └── Collaboration Services
-         │
-         ▼
-External Services
-   │
-   ├── GitHub Models API
-   ├── Google Gemini
-   └── Piston API
+        │
+        ├── WebSocket Signaling
+        ├── AI Request Proxy
+        └── Collaboration Services
+                │
+                ▼
+External APIs
+        │
+        ├── GitHub Models
+        ├── Google Gemini
+        └── Piston API
 ```
 
 ---
 
-## ⚙️ Tech Stack
+### Architecture Notes
 
-### Frontend
+**Collaboration Layer**
 
-- React
-- Vite
-- Tailwind CSS
-- Monaco Editor
-- Framer Motion
-- React Hot Toast
+- Uses Yjs CRDT model
+- Peer-to-peer synchronization
+- Multi-user cursor awareness
 
-### Collaboration Layer
+**AI Layer**
 
-- Yjs
-- WebRTC
-- Liveblocks
+Backend securely handles:
 
-### Backend
+- Model requests
+- Prompt processing
+- Context passing
 
-- Node.js
-- Express
-- WebSocket
-- dotenv
+**Execution Layer**
 
-### AI Services
-
-- GitHub Models API
-- Gemini AI
-
-### Code Execution
-
-- Piston API
-- Browser Sandbox Execution
+- JavaScript executes in browser
+- Other languages run via Piston API
 
 ---
 
-## 📂 Project Structure
+# ⚙️ Tech Stack
+
+| Layer | Technologies |
+|---------|-------------|
+| Frontend | React, Vite, Monaco Editor, Tailwind CSS, Framer Motion |
+| Collaboration | Yjs, WebRTC, Liveblocks |
+| Backend | Node.js, Express, WebSocket |
+| AI Models | GPT-4.1, Gemini, Llama 4 Scout |
+| Execution | Piston API |
+
+---
+
+# 📂 Project Structure
 
 ```text
 CodeCollab/
@@ -238,9 +265,18 @@ CodeCollab/
 
 ---
 
-# 🚀 Installation Guide
+# 🚀 Installation & Local Development
 
-## Step 1: Clone Repository
+## Prerequisites
+
+Install:
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+---
+
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/yourusername/CodeCollab.git
@@ -250,7 +286,7 @@ cd CodeCollab
 
 ---
 
-## Step 2: Backend Setup
+## 2. Backend Setup
 
 Move into backend folder:
 
@@ -286,7 +322,7 @@ Start backend:
 npm run dev
 ```
 
-Backend runs on:
+Backend runs at:
 
 ```bash
 http://localhost:3000
@@ -294,9 +330,9 @@ http://localhost:3000
 
 ---
 
-## Step 3: Frontend Setup
+## 3. Frontend Setup
 
-Open new terminal:
+Open another terminal:
 
 ```bash
 cd client
@@ -320,13 +356,13 @@ Add:
 VITE_API_BASE_URL=http://localhost:3000
 ```
 
-Start frontend:
+Run frontend:
 
 ```bash
 npm run dev
 ```
 
-Frontend runs on:
+Frontend runs at:
 
 ```bash
 http://localhost:5173
@@ -334,7 +370,7 @@ http://localhost:5173
 
 ---
 
-## ▶️ Running Application
+# ▶️ Running Application
 
 Start backend:
 
@@ -344,7 +380,7 @@ cd server
 npm run dev
 ```
 
-Start frontend:
+Open new terminal:
 
 ```bash
 cd client
@@ -360,20 +396,21 @@ http://localhost:5173
 
 ---
 
-## 📚 Learn Hub
+# 📚 Learning Hub
 
-The built-in learning section provides documentation and tutorials for:
+The built-in learning section contains interactive documentation for:
 
 ### JavaScript
 
 - ES6+
 - Async/Await
 - DOM Manipulation
+- Events
 
 ### Python
 
-- OOP
 - Functions
+- OOP
 - Libraries
 
 ### Java
@@ -385,55 +422,34 @@ The built-in learning section provides documentation and tutorials for:
 ### C++
 
 - STL
-- Memory Management
 - Competitive Programming
+- Memory Management
 
 ### C
 
 - Fundamentals
-- Pointers
 - File Handling
+- Pointers
 
 ---
 
-## 🔮 Future Enhancements
+# 🔮 Future Enhancements
 
-- User authentication
-- Room history
-- Voice and video communication
+- Authentication and room history
+- Voice and video collaboration
 - Multi-file support
-- AI-generated unit testing
+- AI generated unit tests
+- Deployment support
 - Community templates
-- One-click deployment
 - Project history
+- Cloud save functionality
 
 ---
 
-## 👨‍💻 Author
+<p align="center">
 
-Aditya Gowda
-
-GitHub:
-
-https://github.com/yourusername
-
-LinkedIn:
-
-https://linkedin.com/in/yourprofile
-
----
-
-## ⭐ Support
-
-If you liked this project:
-
-⭐ Star the repository
-
-🍴 Fork the project
-
-🛠 Contribute improvements
-
-🐛 Report bugs
+Made with ❤️ for collaborative development
 
 Happy Coding 🚀
-````
+
+</p>
