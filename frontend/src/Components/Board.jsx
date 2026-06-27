@@ -1,12 +1,12 @@
 "use client";
 
 import React from 'react'
-import Whiteboard from './WhiteBoard'
 import {
   LiveblocksProvider,
   RoomProvider,
 } from "@liveblocks/react/suspense";
 import { LIVEBLOCKS_PUBLIC_KEY } from "../config/api.js";
+import Whiteboard from './Whiteboard.jsx';
 
 export default function Board() {
     return (
