@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+// src/Components/Learn.jsx
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const Learn = () => {
+  const navigate = useNavigate();
   const [selectedLanguage, setSelectedLanguage] = useState('javascript');
   const [activeTopic, setActiveTopic] = useState('introduction');
   const [searchTerm, setSearchTerm] = useState('');
@@ -1498,7 +1501,7 @@ void binaryFileExample() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Header */}
+        {/* Header with Back Button */}
         <header className="bg-gray-800 border-b border-gray-700 px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -1509,6 +1512,17 @@ void binaryFileExample() {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
+              </button>
+              {/* Back to Dashboard Button */}
+              <button
+                onClick={() => navigate('/dashboard')}
+                className="flex items-center space-x-2 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+                title="Back to Dashboard"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                <span className="text-sm">Dashboard</span>
               </button>
               <h2 className="text-xl font-semibold text-gray-200">
                 {currentTopic?.title || 'Documentation'}

@@ -1,3 +1,4 @@
+// server/socket.js (or wherever this file lives)
 import { Server } from 'socket.io';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -14,19 +15,22 @@ export function setupSocketIO(httpServer) {
   io.on('connection', (socket) => {
     console.log(`[Socket] User connected: ${socket.id}`);
 
-    socket.on('join-room', (roomId, userId, userRole) => {
+    // Modified to accept optional userName (4th param)
+    socket.on('join-room', (roomId, userId, userRole, userName) => {
       try {
         socket.join(roomId);
         socket.roomId = roomId;
         socket.userId = userId;
         socket.userRole = userRole;
+        socket.userName = userName || 'Unknown';
 
-        console.log(`[Socket] User ${userId} joining room ${roomId} as ${userRole}`);
+        console.log(`[Socket] User ${userId} (${userName}) joining room ${roomId} as ${userRole}`);
 
         if (!rooms.has(roomId)) {
           rooms.set(roomId, {
             participants: new Map(),
             messages: [],
+            currentProblem: null,        // <-- store latest problem
             createdAt: new Date(),
             lastActivity: new Date(),
           });
@@ -38,11 +42,20 @@ export function setupSocketIO(httpServer) {
         room.participants.set(userId, {
           socketId: socket.id,
           userRole,
+          userName: userName || 'Unknown',
           joinedAt: new Date(),
         });
 
-        socket.to(roomId).emit('user-connected', { userId, userRole });
+        // Notify others
+        socket.to(roomId).emit('user-connected', { userId, userRole, userName });
+
+        // Send existing messages AND current problem (if any) to the joiner
         socket.emit('existing-messages', room.messages);
+
+        if (room.currentProblem) {
+          console.log(`[Socket] Sending current problem to late joiner ${userId}`);
+          socket.emit('problem-generated', room.currentProblem);
+        }
 
         console.log(`[Socket] Room ${roomId} now has ${room.participants.size} participants`);
       } catch (error) {
@@ -60,6 +73,7 @@ export function setupSocketIO(httpServer) {
             userRole: data.userRole,
             socketId: data.socketId,
             joinedAt: data.joinedAt,
+            userName: data.userName,
           }));
           console.log(`[Socket] Sending ${participants.length} participants for room ${socket.roomId}`);
           callback({ success: true, participants });
@@ -103,6 +117,47 @@ export function setupSocketIO(httpServer) {
       }
     });
 
+    // ---------- NEW: problem-generated handler ----------
+    socket.on('problem-generated', (problemData) => {
+      try {
+        const roomId = socket.roomId;
+        if (!roomId) return;
+
+        console.log(`[Socket] Problem generated in room ${roomId} by ${socket.userId}`);
+        const room = rooms.get(roomId);
+        if (room) {
+          // Store the problem for late joiners
+          room.currentProblem = problemData;
+          room.lastActivity = new Date();
+        }
+
+        // Broadcast to everyone ELSE in the room (including the candidate)
+        socket.to(roomId).emit('problem-generated', problemData);
+
+        // Also emit back to the interviewer so they know it's stored? Not needed.
+      } catch (error) {
+        console.error('[Socket] Problem generation error:', error);
+      }
+    });
+
+    // ---------- NEW: code-update handler ----------
+    socket.on('code-update', (data) => {
+      try {
+        const roomId = socket.roomId;
+        if (!roomId) return;
+
+        // Accept both { code } object and raw string
+        const code = data?.code || data;
+        console.log(`[Socket] Code update in room ${roomId} from ${socket.userId}: ${typeof code === 'string' ? code.substring(0, 30) + '...' : 'non-string'}`);
+
+        // Broadcast to everyone else in the room
+        socket.to(roomId).emit('code-update', { code });
+      } catch (error) {
+        console.error('[Socket] Code update error:', error);
+      }
+    });
+
+    // ---------- WebRTC signaling (unchanged) ----------
     socket.on('offer', ({ offer, targetUserId }) => {
       try {
         const room = rooms.get(socket.roomId);
@@ -154,6 +209,7 @@ export function setupSocketIO(httpServer) {
       }
     });
 
+    // ---------- Disconnect (unchanged) ----------
     socket.on('disconnect', (reason) => {
       const { roomId, userId } = socket;
       console.log(`[Socket] User disconnected: ${socket.id} (${userId}) - ${reason}`);
@@ -181,6 +237,7 @@ export function setupSocketIO(httpServer) {
     });
   });
 
+  // Periodic cleanup of inactive rooms (unchanged)
   setInterval(() => {
     const now = new Date();
     let cleanedRooms = 0;
